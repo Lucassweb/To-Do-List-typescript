@@ -1,8 +1,11 @@
 import * as S from './styles'
+import {Todo} from '../templates/todo/index'
 
 const App = () => {
   return (
-    <S.Container/>
+    <S.Container>
+      <Todo/>
+    </S.Container>
   )
 }
 
