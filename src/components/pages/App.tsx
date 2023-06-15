@@ -1,11 +1,8 @@
-import React from 'react';
+import * as S from './styles'
 
 const App = () => {
-  
   return (
-
-    <h1>Teste</h1>
-
+    <S.Container/>
   )
 }
 
