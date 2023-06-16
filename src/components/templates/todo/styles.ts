@@ -7,7 +7,7 @@ export const Formulario = styled.div`
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    border: 2px solid red;
+
 
     h1 {
         font-size: 4em;
@@ -21,7 +21,6 @@ export const Formulario = styled.div`
         width: 100%;
         border: none;
         font-size: 15px;
-        font-family:'Kablammo', cursive;
     }
 
     button {
@@ -33,9 +32,27 @@ export const Formulario = styled.div`
         margin-top: 2em;
         padding: 7px;
         width: 50%;
+        border-radius: 5px;
     }
 
     li {
         color: white;
     }
+    
+`
+
+export const listItem = styled.ul`
+    margin-right: 13em;
+    display: flex;
+    flex-direction: column;
+`
+
+export const itemList = styled.li`
+    list-style: none;
+    color: yellow !important;
+    font-weight: bold;
+    padding: 5px;
+    margin-bottom: 5px;
+    font-size: 22px;
+    font-family:'Kablammo', cursive;
 `

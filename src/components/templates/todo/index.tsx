@@ -1,4 +1,6 @@
 import { FormEvent, useState } from 'react'
+import { Input } from '../../input/index'
+import { Button } from '../../button/index'
 import * as S from './styles'
 
 export const Todo = () => {
@@ -9,25 +11,24 @@ export const Todo = () => {
 
     const handleSubmitAdd = (event: FormEvent) => {
         event.preventDefault();
-        setShow((stateList) => [...stateList, task])
+        setShow((stateList) => [...stateList, task]);
+        setTask('');
     }
 
     return (
         <S.Formulario>
             <h1>To do List</h1>
             <form onSubmit={handleSubmitAdd}>
-                <input type="text"
-                    placeholder="digite sua tarefa"
-                    onChange={event => setTask(event.target.value)}
-                />
-                <button type="submit">Adicionar</button>
+                <Input type="text" value={task} placeholder="digite sua tarefa"
+                    onChange={event => setTask(event.target.value)}/>
+                <Button type="submit">Adicionar</Button>
             </form>
-            
-            <ul>
-                {show.map((todo) => (
-                    <li>{todo}</li>
+
+            <S.listItem>
+                {show.map((todo,index) => (
+                    <S.itemList key={index}>{todo}</S.itemList>
                 ))}
-            </ul>
+            </S.listItem>
         </S.Formulario>
     )
 }
