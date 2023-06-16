@@ -1,6 +1,7 @@
 import { FormEvent, useState } from 'react'
 import { Input } from '../../input/index'
 import { Button } from '../../button/index'
+import { Trash2 } from 'lucide-react';
 import * as S from './styles'
 
 export const Todo = () => {
@@ -17,7 +18,7 @@ export const Todo = () => {
 
     return (
         <S.Formulario>
-            <h1>To do List</h1>
+            <S.Title>To do List</S.Title>
             <form onSubmit={handleSubmitAdd}>
                 <Input type="text" value={task} placeholder="digite sua tarefa"
                     onChange={event => setTask(event.target.value)}/>
@@ -26,7 +27,10 @@ export const Todo = () => {
 
             <S.listItem>
                 {show.map((todo,index) => (
-                    <S.itemList key={index}>{todo}</S.itemList>
+                    <S.itemList key={index}>{todo}
+                        <span><Trash2/></span>
+                    </S.itemList>
+                
                 ))}
             </S.listItem>
         </S.Formulario>

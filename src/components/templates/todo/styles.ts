@@ -7,14 +7,7 @@ export const Formulario = styled.div`
     justify-content: center;
     flex-direction: column;
     align-items: center;
-
-
-    h1 {
-        font-size: 4em;
-        font-family:'Kablammo', cursive;
-        color: white;
-    }
-
+    
     input {
         padding: 7px;
         border-radius: 5px;
@@ -39,6 +32,13 @@ export const Formulario = styled.div`
         color: white;
     }
     
+`
+
+export const Title = styled.h1`
+    font-size: 4em;
+    font-family:'Kablammo', cursive;
+    color: white;
+
 `
 
 export const listItem = styled.ul`
