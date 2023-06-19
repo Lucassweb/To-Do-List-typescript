@@ -55,4 +55,8 @@ export const itemList = styled.li`
     margin-bottom: 5px;
     font-size: 22px;
     font-family:'Kablammo', cursive;
+
+    span {
+        cursor: pointer;
+    }
 `

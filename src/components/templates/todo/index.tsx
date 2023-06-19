@@ -2,18 +2,25 @@ import { FormEvent, useState } from 'react'
 import { Input } from '../../input/index'
 import { Button } from '../../button/index'
 import { Trash2 } from 'lucide-react';
+import {Span} from '../../span/index'
 import * as S from './styles'
 
 export const Todo = () => {
     const [task, setTask] = useState('')
     const [show, setShow] = useState<string[]>([])
 
-    console.log(show);
 
     const handleSubmitAdd = (event: FormEvent) => {
         event.preventDefault();
+
+        if (task === '') return // se o elemento estiver vazio, ele retorna vazio
+        
         setShow((stateList) => [...stateList, task]);
         setTask('');
+    }
+
+    const deleteTask = (index : any) => {  
+        setShow(show.filter((_, i) => i !== index))
     }
 
     return (
@@ -28,9 +35,8 @@ export const Todo = () => {
             <S.listItem>
                 {show.map((todo,index) => (
                     <S.itemList key={index}>{todo}
-                        <span><Trash2/></span>
+                        <Span onClick={() => deleteTask(index)}><Trash2/></Span>
                     </S.itemList>
-                
                 ))}
             </S.listItem>
         </S.Formulario>
